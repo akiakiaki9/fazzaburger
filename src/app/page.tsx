@@ -15,7 +15,7 @@ import Specials from "./components/Specials";
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar />
       <Header />
       <Section />
       <Section1 />
@@ -27,7 +27,11 @@ export default function Home() {
       <Chefs />
       <Reservation />
       <Section5 />
-      <Footer />
+      <Footer /> */}
+      <div>
+        <h1>сайт на разработке...</h1>
+        <a href="https://akbarsoft.uz">подробная информация</a>
+      </div>
     </div>
   );
 };
