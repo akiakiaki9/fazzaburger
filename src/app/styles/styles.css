@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: 'Barlow Condensed', Arial, sans-serif; */
+    font-family: 'Barlow Condensed', 'Roboto Condensed', sans-serif;
+}
+
+:root {
+    --green-color: #00833E;
+    --orange-color: #EF7F01;
+    --subtitle-color: #464646;
+    --bg-color: #212121;
+}

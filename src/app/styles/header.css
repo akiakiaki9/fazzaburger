@@ -1,0 +1,239 @@
+.header {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/images/header.jpg');
+    background-attachment: fixed;   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.header-blok__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%;
+    padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header-blok__section-1 {
+    flex: 1;
+    max-width: 50%;
+    padding-left: 100px;
+}
+
+.header-blok__section-1 h3 {
+    color: #EF7F01;
+    margin-bottom: 10px;
+    font-size: 250%;
+}
+
+.header-blok__section-1 h1 {
+    font-size: 700%;
+    margin-bottom: 20px;
+    color: #fff;
+    max-width: 300px;
+    line-height: 1;
+}
+
+.header-blok__section-1 p {
+    font-size: 130%;
+    max-width: 400px;
+    color: #b9b9b9;
+    line-height: 1.6;
+}
+
+.header-blok__section-2 {
+    flex: 1;
+    text-align: center;
+    padding-right: 100px;
+}
+
+.header-blok__section-2 img {
+    width: 100%;
+    max-width: 600px;
+    object-fit: contain;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #EF7F01;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #EF7F01;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background: #EF7F01;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 100vh;
+        min-height: 600px;
+        padding-top: 60px;
+    }
+
+    .header-carousel {
+        height: calc(100vh - 60px);
+    }
+
+    .header-blok__container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 20px 15px;
+        gap: 30px;
+        height: 100%;
+    }
+
+    .header-blok__section-1 {
+        max-width: 100%;
+        padding-left: 0;
+        margin-bottom: 0;
+        order: 2;
+    }
+
+    .header-blok__section-1 h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .header-blok__section-1 h1 {
+        font-size: 2.5rem;
+        max-width: 100%;
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+
+    .header-blok__section-1 p {
+        font-size: 1rem;
+        max-width: 100%;
+        line-height: 1.4;
+        margin: 0 auto;
+    }
+
+    .header-blok__section-2 {
+        padding-right: 0;
+        order: 1;
+        flex: none;
+        width: 100%;
+    }
+
+    .header-blok__section-2 img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+
+    .carousel-indicators {
+        bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        min-height: 500px;
+    }
+
+    .header-blok__container {
+        padding: 15px 10px;
+        gap: 25px;
+    }
+
+    .header-blok__section-1 h3 {
+        font-size: 1.1rem;
+    }
+
+    .header-blok__section-1 h1 {
+        font-size: 2rem;
+    }
+
+    .header-blok__section-1 p {
+        font-size: 0.9rem;
+    }
+
+    .header-blok__section-2 img {
+        max-width: 220px;
+    }
+
+    .carousel-indicators {
+        bottom: 20px;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .header-blok__section-1 {
+        padding-left: 50px;
+    }
+
+    .header-blok__section-1 h1 {
+        font-size: 4rem;
+    }
+
+    .header-blok__section-1 p {
+        font-size: 1.1rem;
+    }
+
+    .header-blok__section-2 {
+        padding-right: 50px;
+    }
+
+    .header-blok__section-2 img {
+        max-width: 450px;
+    }
+}
