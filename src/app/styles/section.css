@@ -68,7 +68,8 @@
 }
 
 .section-blok__container-1__section-1__container:hover {
-    opacity: .8;
+    background-color: var(--orange-color);
+    color: #fff;
 }
 
 .section-blok__container-1__section-2 {
@@ -148,6 +149,7 @@
     .section-blok__container-2 {
         background-size: cover;
         background-position: left;
+        height: 300px;
     }
     .section-blok__container-2__section {
         font-size: 80%;

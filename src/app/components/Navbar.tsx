@@ -17,12 +17,10 @@ export default function Navbar() {
         setIsMenuOpen(!isMenuOpen)
     }
 
-    // Закрываем меню при изменении маршрута
     useEffect(() => {
         setIsMenuOpen(false)
     }, [pathname])
 
-    // Блокируем скролл при открытом меню
     useEffect(() => {
         if (isMenuOpen) {
             document.body.style.overflow = 'hidden'
@@ -42,11 +40,11 @@ export default function Navbar() {
                         <Link href='/gallery' className={isActive('/gallery') ? 'active' : ''}>Галерея</Link>
                         <Link href='/contacts' className={isActive('/contacts') ? 'active' : ''}>Контакты</Link>
                     </div>
-                    
+
                     <div className="navbar-blok__section-2">
                         <Link href='/'><img src="/images/logo.PNG" alt="Fazza Burger" /></Link>
                     </div>
-                    
+
                     <div className="navbar-blok__section-3">
                         <div>
                             <MdDeliveryDining className='navbar-blok__section-3__icon' />
@@ -54,8 +52,7 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Бургер-кнопка */}
-                    <button 
+                    <button
                         className={`burger-menu ${isMenuOpen ? 'active' : ''}`}
                         onClick={toggleMenu}
                         aria-label="Меню"
@@ -67,7 +64,6 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Мобильное меню */}
             <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
                 <div className="mobile-menu__content">
                     <nav className="mobile-nav">
@@ -77,7 +73,7 @@ export default function Navbar() {
                         <Link href='/gallery' className={isActive('/gallery') ? 'active' : ''}>Галерея</Link>
                         <Link href='/contacts' className={isActive('/contacts') ? 'active' : ''}>Контакты</Link>
                     </nav>
-                    
+
                     <div className="mobile-order">
                         <div className="mobile-order__btn">
                             <MdDeliveryDining className='mobile-order__icon' />
@@ -87,11 +83,10 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Blur overlay */}
-            <div 
+            <div
                 className={`menu-overlay ${isMenuOpen ? 'active' : ''}`}
                 onClick={toggleMenu}
             />
         </>
     )
-}
+};

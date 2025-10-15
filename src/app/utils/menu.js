@@ -1,8 +1,8 @@
 const MENU = [
     {
         id: 1,
-        name: '',
-        image: '',
+        name: 'Гамбургер',
+        image: '/images/menu/hamburger.png',
         description: '',
         price: 0,
         category: ''

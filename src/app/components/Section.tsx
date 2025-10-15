@@ -9,7 +9,7 @@ export default function Section() {
             <div className="section-blok">
                 <div className="section-blok__container-1">
                     <div className="section-blok__container-1__section-1">
-                        <h1>SUPER DELICIOUS</h1>
+                        <h1>MANY COMBOS</h1>
                         <p>CALL US NOW:</p>
                         <a href="tel:+998 91-441-71-81" className="section-blok__container-1__section-1-a">+998 91-441-71-81</a>
                         <Link href='/contacts' className='section-blok__container-1__section-1__container'>
@@ -23,9 +23,9 @@ export default function Section() {
                 </div>
                 <div className="section-blok__container-2">
                     <div className="section-blok__container-2__section">
-                        <h1>Cheese pizza</h1>
-                        <p>NEW PHENOMENON BURGER TASTE</p>
-                        <p className='section-blok__container-2__section-p'>$69,00</p>
+                        <h1>PEPPERONI PIZZA</h1>
+                        <p>NEW PHENOMENON PIZZA TASTE</p>
+                        <p className='section-blok__container-2__section-p'>80.000 SO'M</p>
                         <Link href='/contacts' className='section-blok__container-1__section-1__container'>
                             ЗАКАЗАТЬ
                             <RxThickArrowRight className='section-blok__icon' />

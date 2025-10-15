@@ -1,0 +1,115 @@
+.contacts {
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.contacts-header {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.contacts-header__header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.contacts-header__header h1 {
+    text-align: center;
+    font-size: 300%;
+}
+
+.contacts-header__header p {
+    text-align: center;
+    max-width: 800px;
+    color: var(--subtitle-color);
+    line-height: 1.5;
+}
+
+.contacts-header__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contacts-header__container-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contacts-header__icon {
+    width: 60px;
+    height: 60px;
+}
+
+.contacts-header__container-section b {
+    text-transform: uppercase;
+    font-size: 130%;
+}
+
+.contacts-header__container-section a {
+    text-decoration: none;
+    transition: .5s;
+}
+
+.contacts-header__container-section a:hover {
+    transform: scale(1.1);
+}
+
+.contacts-header__container-p-1 {
+    font-size: 110%;
+    text-align: center;
+    color: var(--subtitle-color);
+    font-size: 110%;
+}
+
+.contacts-header__container-p-2 {
+    font-size: 110%;
+    color: var(--green-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .contacts {
+        padding: 50px 20px;
+    }
+}
+
+@media (max-width: 728px) {
+    .contacts {
+        padding: 20px;
+    }
+    .contacts-header__header {
+        gap: 10px;
+    }
+    .contacts-header__header h1 {
+        font-size: 200%;
+    }
+    .contacts-header__header p {
+        font-size: 80%;
+    }
+    .contacts-header__container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .contacts-header__icon {
+        width: 30px;
+        height: 30px;
+    }
+    .contacts-header__container-section {
+        gap: 10px;
+    }
+    .contacts-header__container-section b {
+        font-size: 100%;
+    }
+    .contacts-header__container-p-1 {
+        font-size: 80%;
+    }
+}

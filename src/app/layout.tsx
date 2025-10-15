@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import './styles/styles.css';
 import './styles/navbar.css';
+import './styles/navbar1.css';
 import './styles/header.css';
 import './styles/footer.css';
 import './styles/reservation.css';
 import './styles/section.css';
+import './styles/specials.css';
+import './styles/menu.css';
+import './styles/contacts.css';
+import './styles/pagename.css';
 
 export const metadata: Metadata = {
   title: "Fazza Burger",

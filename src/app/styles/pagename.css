@@ -1,0 +1,69 @@
+.pagename {
+    background-image: linear-gradient(hsla(0, 0%, 0%, 0.482) 16%, hsla(0, 0%, 0%, 0.482)),
+        url('/images/pagename.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-top: 100px;
+}
+
+.pagename-blok {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pagename-blok h1 {
+    font-size: 300%;
+}
+
+.pagename-blok__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    font-weight: 500;
+}
+
+.pagename-blok__container a {
+    text-decoration: none;
+}
+
+.pagename__p-1 {
+    color: var(--green-color);
+    transition: .5s;
+    font-size: 120%;
+}
+
+.pagename__p-1:hover {
+    opacity: .8;
+}
+
+.pagename__p-2 {
+    color: #fff;
+    transition: .5s;
+    font-size: 120%;
+}
+
+.pagename__p-2:hover {
+    opacity: .8;
+}
+
+@media (max-width: 768px) {
+    .pagename {
+        background-position: center;
+    }
+    .pagename-blok h1 {
+        font-size: 200%;
+    }
+    .pagename__p-1 {
+        font-size: 100%;
+    }
+    .pagename__p-2 {
+        font-size: 100%;
+    }
+}
