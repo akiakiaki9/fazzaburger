@@ -17,9 +17,9 @@ export default function Footer() {
                     <b>НАПРАВЛЕНИЕ</b>
                     <Link href='/'>Главная</Link>
                     <Link href='/menu'>Меню</Link>
-                    <Link href='/about-us'>О нас</Link>
-                    <Link href='/gallery'>Галерея</Link>
-                    <Link href='/contacts'>Контакты</Link>
+                    <Link href='#about-us'>О нас</Link>
+                    <Link href='#gallery'>Галерея</Link>
+                    <Link href='#contacts'>Контакты</Link>
                 </div>
                 <div className="footer-blok__section-3">
                     <b>ЧАСЫ РАБОТЫ</b>

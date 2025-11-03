@@ -4,23 +4,23 @@ import React, { useState, useEffect } from 'react'
 const carouselData = [
     {
         id: 1,
-        title: "Fast Food Burgers",
-        heading: "Best Burgers",
-        description: "Secret family recipes are the stuff of legends and Stack burger blend is no exception",
+        title: "Бургеры Премиум-класса",
+        heading: "Лучшие Бургеры",
+        description: "Секретные рецепты нашей семьи стали легендой - и смесь для бургеров Stack не исключение",
         image: "/images/carousel/1.png"
     },
     {
         id: 2,
-        title: "Fresh Ingredients",
-        heading: "Quality Taste",
-        description: "Made with the freshest ingredients for the ultimate burger experience",
+        title: "Свежие Ингредиенты",
+        heading: "Качество и Вкус",
+        description: "Готовим из самых свежих ингредиентов для незабываемого бургерного опыта",
         image: "/images/carousel/2.png"
     },
     {
         id: 3,
-        title: "Daily Specials",
-        heading: "Amazing Deals",
-        description: "Check out our daily specials and limited time offers",
+        title: "Специальные Предложения",
+        heading: "Выгодные Предложения",
+        description: "Откройте для себя наши ежедневные спецпредложения и ограниченные по времени акции",
         image: "/images/carousel/3.png"
     }
 ]
