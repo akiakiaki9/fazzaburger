@@ -47,11 +47,11 @@ export default function Navbar() {
             <div className='navbar'>
                 <div className="navbar-blok">
                     <div className="navbar-blok__section-1">
-                        <a href='/' className={isActive('/') ? 'active' : ''}>Главная</a>
+                        <Link href='/' className={isActive('/') ? 'active' : ''}>Главная</Link>
                         <Link href='/menu' className={isActive('/menu') ? 'active' : ''}>Меню</Link>
-                        <a href='#about-us' className={isActive('#about-us') ? 'active' : ''}>О нас</a>
-                        <a href='#gallery' className={isActive('#gallery') ? 'active' : ''}>Галерея</a>
-                        <a href='#contacts' className={isActive('#contacts') ? 'active' : ''}>Контакты</a>
+                        <a href='#about-us'>О нас</a>
+                        <a href='#gallery'>Галерея</a>
+                        <a href='#contacts'>Контакты</a>
                     </div>
 
                     <div className="navbar-blok__section-2">
@@ -82,9 +82,9 @@ export default function Navbar() {
                     <nav className="mobile-nav">
                         <Link href='/' className={isActive('/') ? 'active' : ''}>Главная</Link>
                         <Link href='/menu' className={isActive('/menu') ? 'active' : ''}>Меню</Link>
-                        <a href='#about-us' className={isActive('#about-us') ? 'active' : ''}>О нас</a>
-                        <a href='#gallery' className={isActive('#gallery') ? 'active' : ''}>Галерея</a>
-                        <a href='#contacts' className={isActive('#contacts') ? 'active' : ''}>Контакты</a>
+                        <a href='#about-us'>О нас</a>
+                        <a href='#gallery'>Галерея</a>
+                        <a href='#contacts'>Контакты</a>
                     </nav>
 
                     <div className="mobile-order">
