@@ -24,7 +24,7 @@ export default function Specials() {
                     <div className="specials-blok__container-2__specials-1">
                         <h1>Сочный Бургер</h1>
                         <p>НОВЫЙ ФЕНОМЕН ВКУСА БУРГЕРА</p>
-                        <p className='specials-blok__container-2__specials-p'>55.000 SO'M</p>
+                        <p className='specials-blok__container-2__specials-p'>55.000 SOM</p>
                         <a href='#contacts' className='specials-blok__container-1__specials-1__container'>
                             ЗАКАЗАТЬ
                             <RxThickArrowRight className='specials-blok__icon' />

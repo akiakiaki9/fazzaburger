@@ -1,5 +1,4 @@
 'use client'
-import Link from 'next/link'
 import React from 'react'
 import { RxThickArrowRight } from "react-icons/rx";
 
@@ -25,7 +24,7 @@ export default function Section() {
                     <div className="section-blok__container-2__section">
                         <h1>PEPPERONI PIZZA</h1>
                         <p>НОВЫЙ ВКУС ПЕППЕРОНИ</p>
-                        <p className='section-blok__container-2__section-p'>80.000 SO'M</p>
+                        <p className='section-blok__container-2__section-p'>80.000 SOM</p>
                         <a href='#contacts' className='section-blok__container-1__section-1__container'>
                             ЗАКАЗАТЬ
                             <RxThickArrowRight className='section-blok__icon' />
