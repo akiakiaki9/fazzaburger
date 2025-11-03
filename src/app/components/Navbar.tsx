@@ -27,7 +27,7 @@ export default function Navbar() {
     }
 
     const handleCall = () => {
-        window.location.href = 'tel:+998914417181' // Замените на ваш номер телефона
+        window.location.href = 'tel:+998914417181'
     }
 
     useEffect(() => {
@@ -80,7 +80,7 @@ export default function Navbar() {
             <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
                 <div className="mobile-menu__content">
                     <nav className="mobile-nav">
-                        <a href='/' className={isActive('/') ? 'active' : ''}>Главная</a>
+                        <Link href='/' className={isActive('/') ? 'active' : ''}>Главная</Link>
                         <Link href='/menu' className={isActive('/menu') ? 'active' : ''}>Меню</Link>
                         <a href='#about-us' className={isActive('#about-us') ? 'active' : ''}>О нас</a>
                         <a href='#gallery' className={isActive('#gallery') ? 'active' : ''}>Галерея</a>
