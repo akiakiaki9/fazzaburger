@@ -8,6 +8,8 @@ export default function Navbar() {
     const pathname = usePathname()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [isIOS, setIsIOS] = useState(false)
+    const [isClient, setIsClient] = useState(false)
 
     const isActive = (path: string) => {
         if (path === '/') return pathname === '/'
@@ -42,13 +44,40 @@ export default function Navbar() {
         }
     }, [isMenuOpen, isModalOpen])
 
+    useEffect(() => {
+        const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+        setIsIOS(iOS)
+        setIsClient(true)
+    }, [])
+
+    const handleMenuClick = (e: React.MouseEvent) => {
+        if (isIOS) {
+            e.preventDefault()
+            window.open('/menu.pdf', '_self')
+        }
+        // Для не-iOS - обычный переход по ссылке (работает по умолчанию)
+    }
+
     return (
         <>
             <div className='navbar'>
                 <div className="navbar-blok">
                     <div className="navbar-blok__section-1">
                         <Link href='/' className={isActive('/') ? 'active' : ''}>Главная</Link>
-                        <Link href='/menu' className={isActive('/menu') ? 'active' : ''}>Меню</Link>
+                        
+                        {/* Исправленная ссылка меню для десктопа */}
+                        {isClient ? (
+                            <a 
+                                href={isIOS ? "#" : "/menu"} 
+                                onClick={handleMenuClick}
+                                className="cursor-pointer"
+                            >
+                                Меню
+                            </a>
+                        ) : (
+                            <Link href="/menu">Меню</Link>
+                        )}
+                        
                         <a href='#about-us'>О нас</a>
                         <a href='#gallery'>Галерея</a>
                         <a href='#contacts'>Контакты</a>
@@ -81,14 +110,49 @@ export default function Navbar() {
                 <div className="mobile-menu__content">
                     <nav className="mobile-nav">
                         <Link href='/' className={isActive('/') ? 'active' : ''}>Главная</Link>
-                        <Link href='/menu' className={isActive('/menu') ? 'active' : ''}>Меню</Link>
-                        <a href='#about-us'>О нас</a>
-                        <a href='#gallery'>Галерея</a>
-                        <a href='#contacts'>Контакты</a>
+                        
+                        {/* Исправленная ссылка меню для мобильной версии */}
+                        {isClient ? (
+                            isIOS ? (
+                                <a 
+                                    href="/menu.pdf" 
+                                    className="cursor-pointer"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Меню
+                                </a>
+                            ) : (
+                                <Link href="/menu" className={isActive('/menu') ? 'active' : ''}>Меню</Link>
+                            )
+                        ) : (
+                            <Link href="/menu" className={isActive('/menu') ? 'active' : ''}>Меню</Link>
+                        )}
+                        
+                        <a 
+                            href='#about-us'
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            О нас
+                        </a>
+                        <a 
+                            href='#gallery'
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            Галерея
+                        </a>
+                        <a 
+                            href='#contacts'
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            Контакты
+                        </a>
                     </nav>
 
                     <div className="mobile-order">
-                        <div className="mobile-order__btn" onClick={openModal}>
+                        <div className="mobile-order__btn" onClick={() => {
+                            openModal()
+                            setIsMenuOpen(false)
+                        }}>
                             <MdDeliveryDining className='mobile-order__icon' />
                             <span>ЗАКАЗАТЬ</span>
                         </div>
@@ -134,4 +198,4 @@ export default function Navbar() {
             />
         </>
     )
-};
+}

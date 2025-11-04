@@ -1,8 +1,15 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Footer() {
+    const [isIOS, setIsIOS] = useState(false)
+
+    useEffect(() => {
+        const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+        setIsIOS(iOS)
+    }, [])
+
     return (
         <div className='footer'>
             <div className="footer-blok">
@@ -11,12 +18,18 @@ export default function Footer() {
                         <Link href='/'><img src="/images/logo.PNG" alt="Fazza Burger" /></Link>
                     </div>
                     <p>ул. Окмасжид, 24, Бухара</p>
-                    <a href='tel:++998 91-441-71-81'>+998 91-441-71-81</a>
+                    <a href='tel:+998914417181'>+998 91-441-71-81</a>
                 </div>
                 <div className="footer-blok__section-2">
                     <b>НАПРАВЛЕНИЕ</b>
                     <Link href='/'>Главная</Link>
-                    <Link href='/menu'>Меню</Link>
+                    
+                    {isIOS ? (
+                        <a href="/menu.pdf" className="cursor-pointer">Меню</a>
+                    ) : (
+                        <Link href="/menu">Меню</Link>
+                    )}
+                    
                     <Link href='#about-us'>О нас</Link>
                     <Link href='#gallery'>Галерея</Link>
                     <Link href='#contacts'>Контакты</Link>
@@ -26,7 +39,7 @@ export default function Footer() {
                     <p>Ежедневно</p>
                     <p>10:00 - 3:00</p>
                     <div className="footer-blok__section-3__container">
-                        <a href="https://www.instagram.com/fazzaburger/" target='_blank'>
+                        <a href="https://www.instagram.com/fazzaburger/" target='_blank' rel="noopener noreferrer">
                             <img src='/images/instagram_icon.png' alt='Fazza Burger Instagram' className='footer-blok__section-3__icon' />
                         </a>
                         <img className='footer-blok__section-3__container-img' src="/images/logo.PNG" alt="Fazza Burger" />
@@ -39,4 +52,4 @@ export default function Footer() {
             </div>
         </div>
     )
-};
+}
