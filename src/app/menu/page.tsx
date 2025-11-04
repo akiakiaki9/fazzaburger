@@ -50,7 +50,6 @@ export default function Page() {
                     {/* Вариант 1: Просмотр в новой вкладке */}
                     <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
                         <div className="text-center">
-                            <div className="text-3xl mb-4">👀</div>
                             <h3 className="text-xl font-semibold mb-3">Быстрый просмотр</h3>
                             <p className="text-gray-600 mb-4">
                                 {isIOS
@@ -70,7 +69,6 @@ export default function Page() {
                     {/* Вариант 2: Скачивание */}
                     <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
                         <div className="text-center">
-                            <div className="text-3xl mb-4">📥</div>
                             <h3 className="text-xl font-semibold mb-3">Скачать меню</h3>
                             <p className="text-gray-600 mb-4">
                                 Сохранить файл на устройство для офлайн-доступа
