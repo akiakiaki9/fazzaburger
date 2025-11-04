@@ -1,16 +1,15 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
-import '../styles/carousel.css'
+import React, { useEffect, useState } from 'react';
+import '../styles/carousel.css';
 
 interface GalleryImage {
-    id: number
-    src: string
-    alt: string
+    id: number;
+    src: string;
+    alt: string;
 }
 
 export default function Gallery() {
-    const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null)
+    const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
     const burgerImages = [
         '/images/gallery/1.jpg',
@@ -29,18 +28,18 @@ export default function Gallery() {
         '/images/gallery/14.jpg',
         '/images/gallery/15.jpg',
         '/images/gallery/16.jpg',
-    ]
+    ];
 
     const images: GalleryImage[] = burgerImages.map((src, index) => ({
         id: index + 1,
         src: src,
         alt: `Бургер ${index + 1}`
-    }))
+    }));
 
-    // Показываем только первые 6 фото в grid
-    const displayedImages = images.slice(0, 8)
+    // Показываем только первые 8 фото в grid
+    const displayedImages = images.slice(0, 8);
     // В модалке все 16 фото
-    const allImages = images
+    const allImages = images;
 
     // Блокировка скролла при открытии модального окна
     useEffect(() => {
@@ -66,28 +65,28 @@ export default function Gallery() {
     }, [selectedImageIndex]);
 
     const openModal = (index: number) => {
-        setSelectedImageIndex(index)
-    }
+        setSelectedImageIndex(index);
+    };
 
     const closeModal = () => {
-        setSelectedImageIndex(null)
-    }
+        setSelectedImageIndex(null);
+    };
 
     const nextImage = () => {
         if (selectedImageIndex !== null) {
             setSelectedImageIndex((prevIndex) =>
                 prevIndex === allImages.length - 1 ? 0 : prevIndex! + 1
-            )
+            );
         }
-    }
+    };
 
     const prevImage = () => {
         if (selectedImageIndex !== null) {
             setSelectedImageIndex((prevIndex) =>
                 prevIndex === 0 ? allImages.length - 1 : prevIndex! - 1
-            )
+            );
         }
-    }
+    };
 
     // Обработка нажатия клавиши Escape
     useEffect(() => {
@@ -105,9 +104,8 @@ export default function Gallery() {
     }, [selectedImageIndex]);
 
     return (
-        <div className="gallery-container" id='gallery'>
-
-            {/* Grid с 6 фотографиями */}
+        <div className="gallery-container" id="gallery">
+            {/* Grid с 8 фотографиями */}
             <div className="gallery-grid">
                 {displayedImages.map((image, index) => (
                     <div
@@ -115,13 +113,13 @@ export default function Gallery() {
                         className="gallery-item"
                         onClick={() => openModal(index)}
                     >
-                        <Image
+                        <img
                             src={image.src}
                             alt={image.alt}
                             width={300}
                             height={400}
                             className="gallery-image"
-                            priority={index < 3}
+                            loading={index < 3 ? "eager" : "lazy"}
                         />
                     </div>
                 ))}
@@ -138,13 +136,12 @@ export default function Gallery() {
 
                         {/* Основное изображение */}
                         <div className="modal-image-container">
-                            <Image
+                            <img
                                 src={allImages[selectedImageIndex].src}
                                 alt={allImages[selectedImageIndex].alt}
                                 width={960}
                                 height={1280}
                                 className="modal-image"
-                                priority
                             />
                         </div>
 
@@ -178,7 +175,7 @@ export default function Gallery() {
                                     className={`thumbnail ${index === selectedImageIndex ? 'thumbnail-active' : ''}`}
                                     onClick={() => setSelectedImageIndex(index)}
                                 >
-                                    <Image
+                                    <img
                                         src={image.src}
                                         alt={image.alt}
                                         width={80}
@@ -192,5 +189,5 @@ export default function Gallery() {
                 </div>
             )}
         </div>
-    )
+    );
 }
